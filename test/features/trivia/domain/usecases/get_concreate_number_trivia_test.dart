@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:tdd/features/trivia/domain/entites/number_trivia.dart';
@@ -11,12 +12,25 @@ class MockNumberTriviaRepository extends Mock
   late MockNumberTriviaRepository mockNumberTriviaRepository;
   late GetConcreteNumberTrivia usecases;
 
-  void main() {
+  void main () {
+
     setUp(() {
       mockNumberTriviaRepository = MockNumberTriviaRepository();
       usecases = GetConcreteNumberTrivia(mockNumberTriviaRepository);
     });
-    final testNumber = 1;
-    final testTrivia = NumberTrivia(name: "testName", number: 1);
+    const testNumber = 1;
+    const testTrivia = NumberTrivia(name: "testName", number: 1);
+
+    test('should return number trivia repository ', () async {
+      // arrange
+      when(mockNumberTriviaRepository.getConcreteNumberTrivia(testNumber))
+          .thenAnswer((_) async => const Right(testTrivia));
+      // act
+      final result = await usecases(Params(number: testNumber));
+      // assert
+        expect(result, const Right(testTrivia));
+        verify(mockNumberTriviaRepository.getConcreteNumberTrivia(testNumber));
+        verifyNoMoreInteractions(mockNumberTriviaRepository);
+    });
   }
 }

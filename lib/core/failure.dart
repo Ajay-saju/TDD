@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
 
 abstract class Failure extends Equatable{
-    Failure([List props = const []]) : super();
+    const Failure([List props = const []]) : super();
 }
