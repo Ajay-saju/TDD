@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:tdd/core/failure.dart';
+import 'package:tdd/core/errors/failure.dart';
 import 'package:tdd/features/trivia/domain/entites/number_trivia.dart';
 import 'package:tdd/features/trivia/domain/repositories/number_trivia_repository.dart';
 
-import '../../../../core/usecases.dart';
+import '../../../../core/usecases/usecases.dart';
 
 class GetConcreteNumberTrivia extends
  UseCase<NumberTrivia, Params> {

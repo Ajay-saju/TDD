@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:tdd/core/failure.dart';
+import 'package:tdd/core/errors/failure.dart';
 import 'package:tdd/features/trivia/domain/entites/number_trivia.dart';
 import 'package:tdd/features/trivia/domain/repositories/number_trivia_repository.dart';
 import 'package:tdd/features/trivia/domain/usecases/get_concrete_number_trivia_usecase.dart';

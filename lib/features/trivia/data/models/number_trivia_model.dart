@@ -5,7 +5,10 @@ class NumberTriviaModel extends NumberTrivia {
       : super();
 
   factory NumberTriviaModel.fromJson(Map<String, dynamic> json) {
-    return NumberTriviaModel(
-        number: json['number'] , text: json['text']);
+    return NumberTriviaModel(number: json['number'], text: json['text']);
+  }
+
+  Map<String, dynamic> toJson() {
+    return {'text': text, 'number': number};
   }
 }

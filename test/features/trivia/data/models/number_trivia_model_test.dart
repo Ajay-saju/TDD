@@ -5,8 +5,7 @@ import 'package:tdd/features/trivia/domain/entites/number_trivia.dart';
 import '../../../../fixtures/fixture_reader.dart';
 
 void main() {
-  const testNumberTriviaModel =
-      NumberTriviaModel(text: 'Test text', number: 1);
+  const testNumberTriviaModel = NumberTriviaModel(text: 'Test text', number: 1);
   test('should be a sub class of NumberTriviaEntity', () async {
     expect(testNumberTriviaModel, isA<NumberTrivia>());
   });
@@ -34,6 +33,14 @@ void main() {
       const expectedModel = NumberTriviaModel(number: 1.0, text: 'Test text');
 
       expect(result, expectedModel);
+    });
+  });
+  group('toJson', () {
+    test('shoud return a json map containig the proper data', () async {
+      //arrange
+      final result = testNumberTriviaModel.toJson();
+      const expectedMap = {"text": "Test text", "number": 1};
+      expect(result, expectedMap);
     });
   });
 }
