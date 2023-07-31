@@ -1,9 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:tdd/features/trivia/domain/entites/number_trivia.dart';
-
 import '../../../../core/failure.dart';
 import '../../../../core/usecases.dart';
-import '../repositories/number_trivia_reposotory.dart';
+import '../repositories/number_trivia_repository.dart';
 
 class GetRandomNumberTrivia extends UseCase<NumberTrivia, NoParams> {
   final NumberTriviaRepository repository;
